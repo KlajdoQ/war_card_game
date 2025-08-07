@@ -1,0 +1,5 @@
+require_relative 'war_card_game/card'
+require_relative 'war_card_game/deck'
+require_relative 'war_card_game/player'
+require_relative 'war_card_game/round'
+require_relative 'war_card_game/game'

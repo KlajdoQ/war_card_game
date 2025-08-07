@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.expand_path('../lib', __dir__)
+require 'war_card_game'
+
+# Accept exactly 2 or 4 players per Rule 1.
+unless [2, 4].include?(ARGV.size)
+  puts 'There should be 2 or 4 players to play the War card game.'
+  exit 1
+end
+
+winner = WarCardGame::Game.new(ARGV).play
+
+if winner
+  puts "#{winner.name} wins with #{winner.count} cards!"
+else
+  puts 'Game reached maximum rounds—no winner (stalemate).'
+end
